@@ -133,15 +133,13 @@
         "command": "malloy.refreshSchema",
         "title": "Refresh Schema",
         "category": "Malloy",
-        "icon": {
-          "light": "img/refresh.svg",
-          "dark": "img/refresh.svg"
-        }
+        "icon": "$(refresh)"
       },
       {
         "command": "malloy.editConnections",
         "title": "Edit Connections",
-        "category": "Malloy"
+        "category": "Malloy",
+        "icon": "$(edit)"
       },
       {
         "command": "malloy.runNamedSQLBlock",
@@ -323,13 +321,11 @@
         {
           "id": "malloyHelp",
           "name": "Help",
-          "type": "webview",
-          "when": "malloy.extensionStatus == installed || resourceFilename =~ /\\.malloy(nb)?$/"
+          "type": "webview"
         },
         {
           "id": "malloyConnections",
-          "name": "Malloy Connections",
-          "when": "malloy.extensionStatus == installed || resourceFilename =~ /\\.malloy(nb)?$/"
+          "name": "Malloy Connections"
         }
       ],
       "explorer": [
