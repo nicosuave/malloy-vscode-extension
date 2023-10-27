@@ -77,6 +77,7 @@ export interface PostgresConnectionConfig extends BaseConnectionConfig {
 export interface DuckDBConnectionConfig extends BaseConnectionConfig {
   backend: ConnectionBackend.DuckDB;
   workingDirectory?: string;
+  motherduckToken?: string;
 }
 
 export interface DuckDBWASMConnectionConfigDeprecated

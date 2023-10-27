@@ -35,10 +35,16 @@ export const createDuckDbConnection = async (
   if (!isDuckDBAvailable) {
     throw new Error('DuckDB is not available.');
   }
+
+  // Use md:<motherduckToken> if provided, otherwise use :memory:
+  const connectionString = connectionConfig.motherduckToken
+    ? `md:${connectionConfig.motherduckToken}`
+    : ':memory:';
+
   try {
     const connection = new DuckDBConnection(
       connectionConfig.name,
-      ':memory:',
+      connectionString,
       connectionConfig.workingDirectory || workingDirectory,
       () => ({rowLimit})
     );
